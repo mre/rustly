@@ -1,0 +1,9 @@
+[package]
+name = "rustly"
+version = "0.1.0"
+authors = ["Matthias Endler <matthias.endler@trivago.com>"]
+
+[dependencies]
+rocket = "0.2.4"
+rocket_codegen = "0.2.4"
+harsh = "0.1.2"
