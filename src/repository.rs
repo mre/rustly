@@ -16,7 +16,7 @@ impl Repository {
 
     pub fn store(&mut self, url: &str) -> String {
         let id = self.shortener.next_id();
-        self.urls.insert(id.to_owned(), url.to_string());
+        self.urls.insert(id.to_string(), url.to_string());
         id
     }
 
