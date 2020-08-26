@@ -1,4 +1,4 @@
-use harsh::{Harsh, HarshBuilder};
+use harsh::Harsh;
 
 pub struct Shortener {
     id: u64,
@@ -7,7 +7,7 @@ pub struct Shortener {
 
 impl Shortener {
     pub fn new() -> Shortener {
-        let harsh = HarshBuilder::new().init().unwrap();
+        let harsh = Harsh::default();
         Shortener {
             id: 0,
             generator: harsh,
@@ -15,7 +15,7 @@ impl Shortener {
     }
 
     pub fn next_id(&mut self) -> String {
-        let hashed = self.generator.encode(&[self.id]).unwrap();
+        let hashed = self.generator.encode(&[self.id]);
         self.id += 1;
         hashed
     }
